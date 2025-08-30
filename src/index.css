@@ -8,35 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Main background - light green */
+    --page-background: 81 66% 78%;
+    
+    /* Core colors - farming theme */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - dark green for farming theme */
+    --primary: 120 45% 20%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - soft green accent */
+    --secondary: 110 30% 92%;
+    --secondary-foreground: 120 45% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 110 20% 95%;
+    --muted-foreground: 120 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - green borders and highlights */
+    --accent: 120 35% 85%;
+    --accent-foreground: 120 45% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 120 20% 88%;
+    --input: 120 15% 95%;
+    --ring: 120 45% 20%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Farm-specific design tokens */
+    --farm-green: 120 45% 20%;
+    --farm-green-light: 120 35% 85%;
+    --farm-accent: 81 50% 60%;
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-medium: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +119,25 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: hsl(var(--page-background));
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  /* Custom component styles */
+  .farm-container {
+    @apply bg-white rounded-xl shadow-soft;
+  }
+  
+  .farm-input {
+    @apply bg-white border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all;
+  }
+  
+  .farm-button {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-all duration-300 shadow-soft hover:shadow-medium;
+  }
+  
+  .farm-card {
+    @apply bg-white rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 border-2 border-accent;
   }
 }
