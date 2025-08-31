@@ -1,13 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const [isDark, setIsDark] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldBeDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+    
+    setIsDark(shouldBeDark);
+    document.documentElement.classList.toggle('dark', shouldBeDark);
+  }, []);
+
   const toggleTheme = () => {
-    setIsDark(!isDark);
-    // Theme toggle functionality would be implemented here
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+    document.documentElement.classList.toggle('dark', newIsDark);
+    localStorage.setItem('theme', newIsDark ? 'dark' : 'light');
   };
 
   const navLinks = [
@@ -18,12 +29,12 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-soft sticky top-0 z-50">
+    <nav className="bg-card/80 backdrop-blur-md shadow-soft sticky top-0 z-50 border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-farm-green">CropWise</h1>
+            <h1 className="text-2xl font-bold text-farm-green">Eco-CropAdvisor</h1>
           </div>
 
           {/* Desktop Navigation */}
@@ -73,7 +84,7 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-border">
+        <div className="md:hidden bg-card/95 backdrop-blur-md border-t border-border/50">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navLinks.map((link) => (
               <a

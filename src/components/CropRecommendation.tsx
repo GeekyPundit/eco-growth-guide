@@ -64,8 +64,8 @@ const CropRecommendation = () => {
         </div>
 
         <div className="farm-container p-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {inputFields.map((field) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {inputFields.map((field, index) => (
               <div key={field.key} className="space-y-2">
                 <label className="block text-sm font-medium text-foreground">
                   {field.label}
@@ -78,6 +78,15 @@ const CropRecommendation = () => {
                   onChange={(e) => handleInputChange(field.key as keyof FormData, e.target.value)}
                   className="farm-input w-full"
                 />
+                {/* Show recommendation beside humidity field */}
+                {index === inputFields.length - 1 && recommendation && (
+                  <div className="mt-4 p-4 farm-container">
+                    <h4 className="text-sm font-semibold text-farm-green mb-2">
+                      Recommended Crop:
+                    </h4>
+                    <p className="text-sm text-foreground">{recommendation}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -90,7 +99,7 @@ const CropRecommendation = () => {
             >
               {isLoading ? (
                 <>
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-primary-foreground"></div>
                   <span>Analyzing...</span>
                 </>
               ) : (
@@ -102,17 +111,6 @@ const CropRecommendation = () => {
             </button>
           </div>
         </div>
-
-        {recommendation && (
-          <div className="mt-8">
-            <div className="farm-container p-6 text-center">
-              <h3 className="text-xl font-semibold text-farm-green mb-3">
-                Crop Recommendation
-              </h3>
-              <p className="text-foreground leading-relaxed">{recommendation}</p>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
