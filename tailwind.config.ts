@@ -69,7 +69,8 @@ export default {
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
-				'medium': 'var(--shadow-medium)'
+				'medium': 'var(--shadow-medium)',
+				'glow': 'var(--shadow-glow)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)'
