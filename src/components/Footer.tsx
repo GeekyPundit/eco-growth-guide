@@ -4,12 +4,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-white border-t border-border">
+    <footer id="contact" className="bg-card border-t border-border/50" style={{ backgroundColor: 'hsl(var(--footer-bg))', borderColor: 'hsl(var(--footer-border))' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-farm-green">CropWise</h3>
+            <h3 className="text-2xl font-bold text-farm-green">Eco-CropAdvisor</h3>
             <p className="text-muted-foreground leading-relaxed">
               Empowering farmers with data-driven insights for smarter crop selection and sustainable agriculture practices.
             </p>
@@ -85,9 +85,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-border/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} CropWise. All rights reserved.
+            © {currentYear} Eco-CropAdvisor. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-muted-foreground hover:text-farm-green text-sm transition-colors duration-200">

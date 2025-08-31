@@ -54,16 +54,18 @@ const Navigation = () => {
 
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-accent transition-colors duration-200"
-            >
-              {isDark ? (
-                <Sun className="h-5 w-5 text-foreground" />
-              ) : (
-                <Moon className="h-5 w-5 text-foreground" />
-              )}
-            </button>
+            {/* Flip-flop Theme Toggle */}
+            <div className="flex items-center space-x-2">
+              <Sun className="h-4 w-4 text-muted-foreground" />
+              <button
+                onClick={toggleTheme}
+                className={`theme-toggle ${isDark ? 'dark' : ''}`}
+                aria-label="Toggle theme"
+              >
+                <span className="theme-toggle-thumb" />
+              </button>
+              <Moon className="h-4 w-4 text-muted-foreground" />
+            </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden">

@@ -8,108 +8,118 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Main background - light green */
-    --page-background: 81 66% 78%;
+    /* Main background - enhanced light green */
+    --page-background: 120 40% 96%;
     
-    /* Core colors - farming theme */
+    /* Core colors - improved contrast */
     --background: 0 0% 100%;
-    --foreground: 0 0% 15%;
+    --foreground: 240 10% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 240 10% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover-foreground: 240 10% 8%;
 
-    /* Primary - dark green for farming theme */
-    --primary: 120 45% 20%;
+    /* Primary - rich forest green */
+    --primary: 120 60% 25%;
     --primary-foreground: 0 0% 98%;
 
-    /* Secondary - soft green accent */
-    --secondary: 110 30% 92%;
-    --secondary-foreground: 120 45% 20%;
+    /* Secondary - soft sage green */
+    --secondary: 120 25% 90%;
+    --secondary-foreground: 120 60% 25%;
 
-    --muted: 110 20% 95%;
-    --muted-foreground: 120 10% 45%;
+    --muted: 120 15% 94%;
+    --muted-foreground: 240 5% 45%;
 
-    /* Accent - green borders and highlights */
-    --accent: 120 35% 85%;
-    --accent-foreground: 120 45% 20%;
+    /* Accent - natural green */
+    --accent: 120 35% 88%;
+    --accent-foreground: 120 60% 25%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 120 20% 88%;
-    --input: 120 15% 95%;
-    --ring: 120 45% 20%;
+    --border: 120 20% 85%;
+    --input: 120 15% 96%;
+    --ring: 120 60% 25%;
 
     --radius: 0.75rem;
     
-    /* Farm-specific design tokens */
-    --farm-green: 120 45% 20%;
-    --farm-green-light: 120 35% 85%;
-    --farm-accent: 81 50% 60%;
+    /* Farm-specific enhanced tokens */
+    --farm-green: 120 60% 25%;
+    --farm-green-light: 120 35% 88%;
+    --farm-accent: 120 45% 70%;
     
-    /* Shadows */
-    --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
-    --shadow-medium: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    /* Enhanced shadows with green tint */
+    --shadow-soft: 0 4px 6px -1px hsl(120 20% 0% / 0.08), 0 2px 4px -2px hsl(120 20% 0% / 0.05);
+    --shadow-medium: 0 10px 15px -3px hsl(120 20% 0% / 0.1), 0 4px 6px -4px hsl(120 20% 0% / 0.05);
+    --shadow-glow: 0 0 20px hsl(120 60% 25% / 0.15);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
+    /* Footer specific */
+    --footer-bg: 120 30% 92%;
+    --footer-border: 120 20% 80%;
+
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    /* Dark page background */
-    --page-background: 120 20% 12%;
+    /* Dark page background - deep forest */
+    --page-background: 120 25% 6%;
     
-    --background: 120 15% 8%;
-    --foreground: 120 10% 92%;
+    /* Enhanced dark theme colors */
+    --background: 120 20% 8%;
+    --foreground: 120 15% 92%;
 
-    --card: 120 15% 10%;
-    --card-foreground: 120 10% 92%;
+    --card: 120 15% 12%;
+    --card-foreground: 120 10% 90%;
 
-    --popover: 120 15% 10%;
-    --popover-foreground: 120 10% 92%;
+    --popover: 120 15% 12%;
+    --popover-foreground: 120 10% 90%;
 
-    --primary: 120 45% 35%;
-    --primary-foreground: 120 10% 92%;
+    /* Primary - bright eco green */
+    --primary: 120 50% 45%;
+    --primary-foreground: 120 20% 8%;
 
-    --secondary: 120 20% 15%;
-    --secondary-foreground: 120 10% 92%;
+    /* Secondary - muted dark green */
+    --secondary: 120 25% 18%;
+    --secondary-foreground: 120 30% 85%;
 
     --muted: 120 15% 15%;
-    --muted-foreground: 120 10% 65%;
+    --muted-foreground: 120 10% 60%;
 
-    --accent: 120 20% 18%;
-    --accent-foreground: 120 10% 92%;
+    --accent: 120 25% 20%;
+    --accent-foreground: 120 30% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 120 10% 92%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 120 10% 90%;
 
-    --border: 120 20% 20%;
-    --input: 120 15% 15%;
-    --ring: 120 45% 35%;
+    --border: 120 20% 22%;
+    --input: 120 15% 16%;
+    --ring: 120 50% 45%;
     
     /* Farm-specific dark theme */
-    --farm-green: 120 45% 35%;
-    --farm-green-light: 120 25% 20%;
-    --farm-accent: 81 30% 25%;
+    --farm-green: 120 50% 45%;
+    --farm-green-light: 120 25% 25%;
+    --farm-accent: 120 40% 35%;
+
+    /* Enhanced dark shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(120 50% 0% / 0.3), 0 2px 4px -2px hsl(120 50% 0% / 0.2);
+    --shadow-medium: 0 10px 15px -3px hsl(120 50% 0% / 0.4), 0 4px 6px -4px hsl(120 50% 0% / 0.3);
+    --shadow-glow: 0 0 30px hsl(120 50% 45% / 0.2);
+
+    /* Footer dark theme */
+    --footer-bg: 120 20% 10%;
+    --footer-border: 120 20% 25%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -134,18 +144,36 @@ All colors MUST be HSL.
   
   /* Custom component styles */
   .farm-container {
-    @apply bg-card rounded-xl shadow-soft;
+    @apply bg-card rounded-xl shadow-soft border border-border/50;
   }
   
   .farm-input {
-    @apply bg-card border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all;
+    @apply bg-card border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all shadow-sm;
   }
   
   .farm-button {
-    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-all duration-300 shadow-soft hover:shadow-medium;
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-all duration-300 shadow-soft hover:shadow-glow;
   }
   
   .farm-card {
-    @apply bg-card rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 border-2 border-accent;
+    @apply bg-card rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 border border-accent/30;
+  }
+
+  /* Flip-flop toggle switch */
+  .theme-toggle {
+    @apply relative inline-flex h-8 w-14 items-center rounded-full transition-colors duration-300 ease-in-out cursor-pointer;
+    background: hsl(var(--muted));
+  }
+  
+  .theme-toggle.dark {
+    background: hsl(var(--primary));
+  }
+  
+  .theme-toggle-thumb {
+    @apply inline-block h-6 w-6 transform rounded-full bg-white shadow-lg transition-transform duration-300 ease-in-out;
+  }
+  
+  .theme-toggle.dark .theme-toggle-thumb {
+    @apply translate-x-6;
   }
 }

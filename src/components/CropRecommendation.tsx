@@ -65,7 +65,7 @@ const CropRecommendation = () => {
 
         <div className="farm-container p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {inputFields.map((field, index) => (
+            {inputFields.map((field) => (
               <div key={field.key} className="space-y-2">
                 <label className="block text-sm font-medium text-foreground">
                   {field.label}
@@ -78,15 +78,6 @@ const CropRecommendation = () => {
                   onChange={(e) => handleInputChange(field.key as keyof FormData, e.target.value)}
                   className="farm-input w-full"
                 />
-                {/* Show recommendation beside humidity field */}
-                {index === inputFields.length - 1 && recommendation && (
-                  <div className="mt-4 p-4 farm-container">
-                    <h4 className="text-sm font-semibold text-farm-green mb-2">
-                      Recommended Crop:
-                    </h4>
-                    <p className="text-sm text-foreground">{recommendation}</p>
-                  </div>
-                )}
               </div>
             ))}
           </div>
@@ -111,6 +102,23 @@ const CropRecommendation = () => {
             </button>
           </div>
         </div>
+
+        {/* Crop Recommendation Result - Separate Box */}
+        {recommendation && (
+          <div className="mt-8">
+            <div className="farm-container p-8 text-center shadow-glow">
+              <div className="flex items-center justify-center mb-4">
+                <Sprout className="h-8 w-8 text-farm-green mr-3" />
+                <h3 className="text-2xl font-bold text-farm-green">
+                  Crop Recommendation
+                </h3>
+              </div>
+              <div className="bg-accent/20 rounded-lg p-6 border border-accent/40">
+                <p className="text-foreground leading-relaxed text-lg">{recommendation}</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
